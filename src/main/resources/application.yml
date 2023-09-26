@@ -1,0 +1,15 @@
+server:
+  port: ${SERVER_PORT:8080}
+management:
+  health:
+    binders:
+      enabled: true
+  endpoint:
+    include: health,info,metrics,prometheus
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILE:dev}
+  data:
+    mongodb:
+      database: ${DATABASE_NAME:personal-db}
+      uri: ${DATABASE_URI:mongodb://<username>:<password>@localhost:27017/?retryWrites=true&w=majority}

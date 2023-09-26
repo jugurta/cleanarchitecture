@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+    mongodb:
+        image: mongo:latest
+        container_name: mongodb
+        restart: always
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: test
+            MONGO_INITDB_ROOT_PASSWORD: test
+            MONGO_INITDB_DATABASE: personal-db
+        ports:
+            - 27017:27017
