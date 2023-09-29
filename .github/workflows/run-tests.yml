@@ -1,0 +1,24 @@
+name: Run tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-tests:
+    if: '! github.event.pull_request.draft' # This job is skipped if the pull request is a draft.
+    runs-on: ubuntu-latest
+    steps:
+      # This step checks out the repository.
+      - name: Checkout
+        uses: actions/checkout@v4
+      # This step sets up the Java environment.
+      - name: Set up JDK ${{ inputs.java-version }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      # This step runs the tests.
+      - name: Run tests
+        run: mvn --batch-mode verify

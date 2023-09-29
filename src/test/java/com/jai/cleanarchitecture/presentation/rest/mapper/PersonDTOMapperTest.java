@@ -1,8 +1,10 @@
-package com.jai.cleanarchitecture.presentation.mapper;
+package com.jai.cleanarchitecture.presentation.rest.mapper;
 
 import com.jai.cleanarchitecture.domain.model.Person;
-import com.jai.cleanarchitecture.presentation.dto.PersonDTO;
+import com.jai.cleanarchitecture.presentation.rest.mapper.PersonDTOMapperImpl;
+import com.jai.cleanarchitecture.presentation.rest.dto.PersonDTO;
 
+import com.jai.cleanarchitecture.presentation.rest.mapper.PersonDTOMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;

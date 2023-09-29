@@ -24,7 +24,7 @@ class NamingConventionTest {
     @ArchTest
     static ArchRule controllerShouldBeSuffixed = classes()
             .that()
-            .resideInAPackage("..presentation.controller..")
+            .resideInAPackage("..presentation.rest.controller..")
             .should()
             .haveSimpleNameEndingWith("Controller");
 

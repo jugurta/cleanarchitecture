@@ -1,0 +1,11 @@
+server:
+  port: ${SERVER_PORT:8080}
+spring:
+  data:
+    mongodb:
+      database: ${DATABASE_NAME:personal-db}
+      uri: ${DATABASE_URI:mongodb://test:test@localhost:27017/?retryWrites=true&w=majority}
+  docker:
+    compose:
+      skip:
+        in-tests: false

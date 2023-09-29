@@ -1,9 +1,10 @@
-package com.jai.cleanarchitecture.presentation.controller;
+package com.jai.cleanarchitecture.presentation.rest.controller;
 
 import com.jai.cleanarchitecture.domain.model.Person;
-import com.jai.cleanarchitecture.presentation.dto.PersonDTO;
-import com.jai.cleanarchitecture.presentation.mapper.PersonDTOMapper;
-import com.jai.cleanarchitecture.presentation.mapper.PersonDTOMapperImpl;
+import com.jai.cleanarchitecture.presentation.rest.controller.PersonController;
+import com.jai.cleanarchitecture.presentation.rest.dto.PersonDTO;
+import com.jai.cleanarchitecture.presentation.rest.mapper.PersonDTOMapper;
+import com.jai.cleanarchitecture.presentation.rest.mapper.PersonDTOMapperImpl;
 import com.jai.cleanarchitecture.providers.PersonDTOProvider;
 import com.jai.cleanarchitecture.usecase.CreatePersonUseCase;
 import com.jai.cleanarchitecture.usecase.FetchPersonUseCase;

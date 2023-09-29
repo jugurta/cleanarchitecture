@@ -1,7 +1,7 @@
-package com.jai.cleanarchitecture.presentation.mapper;
+package com.jai.cleanarchitecture.presentation.rest.mapper;
 
 import com.jai.cleanarchitecture.domain.model.Person;
-import com.jai.cleanarchitecture.presentation.dto.PersonDTO;
+import com.jai.cleanarchitecture.presentation.rest.dto.PersonDTO;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 

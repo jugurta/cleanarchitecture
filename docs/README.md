@@ -51,11 +51,12 @@ The application should now be up and running locally.
 The project follows the clean architecture principles, which means it's organized into distinct layers:
 
 - **Presentation**: Contains the web controllers and request/response models.
-- **UseCase**: Holds the use cases and business logic.
 - **Domain**: Contains the core domain entities and business rules.
 - **Infrastructure**: Handles database access and data storage.
 
 This separation of concerns makes the application easy to maintain and test.
+
+<img src="assets/project-structure.png" width="50%">
 
 ## Usage
 

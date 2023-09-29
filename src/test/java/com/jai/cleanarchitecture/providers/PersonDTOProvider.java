@@ -1,6 +1,6 @@
 package com.jai.cleanarchitecture.providers;
 
-import com.jai.cleanarchitecture.presentation.dto.PersonDTO;
+import com.jai.cleanarchitecture.presentation.rest.dto.PersonDTO;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;

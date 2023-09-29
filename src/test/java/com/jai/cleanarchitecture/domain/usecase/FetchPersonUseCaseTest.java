@@ -1,42 +1,41 @@
-package com.jai.cleanarchitecture.usecase;
+package com.jai.cleanarchitecture.domain.usecase;
 
 import com.jai.cleanarchitecture.domain.model.Person;
 import com.jai.cleanarchitecture.domain.repository.PersonRepository;
 import com.jai.cleanarchitecture.providers.PersonProvider;
+import com.jai.cleanarchitecture.usecase.FetchPersonUseCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.*;
 
-class CreatePersonUseCaseTest {
+class FetchPersonUseCaseTest {
 
     PersonRepository personRepository;
-    CreatePersonUseCase createPersonUseCase;
+    FetchPersonUseCase fetchPersonUseCase;
 
     @BeforeEach
     void setUp() {
         personRepository = mock(PersonRepository.class);
-        createPersonUseCase = new CreatePersonUseCase(personRepository);
+        fetchPersonUseCase = new FetchPersonUseCase(personRepository);
     }
 
     @ParameterizedTest
     @ArgumentsSource(PersonProvider.class)
-    void givenPersonToSaveShouldReturnPersonModel(Person person) {
+    void givenFetchPersonByIdShouldReturnPerson(Person person) {
         //GIVEN
-        when(personRepository.save(any(Person.class))).thenAnswer(invocationOnMock -> Mono.just(person));
+        when(personRepository.findById(anyLong())).thenAnswer(invocationOnMock -> Mono.just(person));
         //WHEN
-        Mono<Person> result = createPersonUseCase.createPerson(person);
+        Mono<Person> result = fetchPersonUseCase.fetchById(anyLong());
         //THEN
         StepVerifier
                 .create(result)
                 .expectNext(person)
                 .verifyComplete();
-        verify(personRepository, times(1)).save(person);
+        verify(personRepository, times(1)).findById(anyLong());
     }
-
-
 }
